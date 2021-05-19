@@ -11,8 +11,7 @@ public class Shader {
         Scanner file = new Scanner(handle); 
 
         while(file.hasNextLine()) {
-            String line = file.nextLine() + "\n";
-            src += line;
+            src += file.nextLine() + "\n";
         }
 
         file.close();
