@@ -18,8 +18,7 @@ public class Mesh {
         ArrayList<Integer> texIndices = new ArrayList<>();
 
         while(file.hasNextLine()) {
-            String line = file.nextLine();
-            String[] arr = line.split(" ");
+            String[] arr = file.nextLine().split(" ");
             
             if(arr[0].equals("v")) {
                 vertices.add(Float.parseFloat(arr[1]));
