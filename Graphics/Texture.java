@@ -1,4 +1,5 @@
 import static org.lwjgl.stb.STBImage.*;
+import static org.lwjgl.opengl.GL33C.*;
 import java.nio.ByteBuffer;
 
 public class Texture {
@@ -10,26 +11,23 @@ public class Texture {
 
     public Texture(String path) {
         stbi_set_flip_vertically_on_load(true);
-        this.data = stbi_load(path, width, height, nrChannels, 0);
+        data = stbi_load(path, width, height, nrChannels, 0);
+
+        ID = glGenTextures();
+        glBindTexture(GL_TEXTURE_2D, ID);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width[0], height[0], 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
     }
 
-    public int getID() {
-        return this.ID;
+    public void bind() {
+        glBindTexture(GL_TEXTURE_2D, this.ID);
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
-    public ByteBuffer getData() {
-        return this.data;
-    }
-
-    public int getWidth() {
-        return this.width[0];
-    }
-
-    public int getHeight() {
-        return this.height[0];
+    public void unbind() {
+        glBindTexture(GL_TEXTURE_2D, 0);
     }
 }
