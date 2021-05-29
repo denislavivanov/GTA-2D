@@ -1,4 +1,6 @@
-public Abstract class Weapon{
+package com.elsys;
+
+public abstract class Weapon{
     String name;
     int capacity;
 

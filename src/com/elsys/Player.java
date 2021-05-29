@@ -1,3 +1,7 @@
+package com.elsys;
+
+import java.util.Vector;
+
 public class Player {
     String username;
     enum Person {
@@ -9,7 +13,7 @@ public class Player {
         Woman3
     }
     Person type;
-    vector<Weapon> weapons;
+    Vector<Weapon> weapons;
     int speed;
 
     public Player(String username, Person type) {
