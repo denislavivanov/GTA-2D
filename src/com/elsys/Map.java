@@ -1,15 +1,20 @@
 package com.elsys;
 
+import java.util.Arrays;
 import java.util.Random;
 
-import org.joml.Vector2f;
 
 public class Map{
-    Street streets;
+    char[][] map;
 
     public Map() {
-        streets = new Street();
-
+        map = new char[65][65];
+        for (char[] e : map) {
+            Arrays.fill(e, ' ');
+        }
+        Street streets = new Street(map);
+        TowerBlock towerBlock = new TowerBlock("House", map);
+        this.printMap();
     }
 
     public int getRand(int randomRange) {
@@ -18,7 +23,13 @@ public class Map{
     }
 
     public void printMap(){
+        for(int y = 0; y <= 64; y++){
+            for(int x = 0; x <= 64; x++){
+                System.out.printf("%c", map[y][x]);
 
+            }
+            System.out.printf("\n");
+        }
     }
 
 }

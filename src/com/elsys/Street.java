@@ -1,113 +1,73 @@
 package com.elsys;
 
-import org.joml.Vector2f;
-
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Random;
 
 public class Street {
-    ArrayList<Vector2f> streetFrames;
-    ArrayList<Vector2f> sideWalk;
 
-    public ArrayList<Vector2f> getStreetFrames() {
-        return streetFrames;
-    }
-
-    public ArrayList<Vector2f> getSideWalk() {
-        return sideWalk;
-    }
-
-    public Street() {
-        streetFrames = new ArrayList<Vector2f>();
-        sideWalk = new ArrayList<Vector2f>();
+    public Street(char[][] map) {
         int area = this.getRand(1, 3);
         if(area == 1){
-            this.makeStreet(1);
-            this.makeStreet(3);
+            this.makeStreet(map, 1);
+            this.makeStreet(map, 3);
         } else{
-            this.makeStreet(2);
-            this.makeStreet(4);
+            this.makeStreet(map, 2);
+            this.makeStreet(map, 4);
         }
-        this.printStreet();
+        //this.printStreet();
 
     }
 
-    public void makeStreet(int area){
+    public void test(char[][] map){
+        map[32][32] = '+';
+
+    }
+
+    public void makeStreet(char[][] map, int area){
         int x = -1, y = -1;
         if(area == 1){
-            x = this.getRand(39, 58);
-            y = this.getRand(39, 58);
+            x = this.getRand(44, 52);
+            y = this.getRand(12, 20);
         } else if(area == 2){
-            x = this.getRand(7, 26);
-            y = this.getRand(39, 58);
+            x = this.getRand(12, 20);
+            y = this.getRand(12, 20);
         } else if(area == 3){
-            x = this.getRand(7, 26);
-            y = this.getRand(7, 26);
+            x = this.getRand(12, 20);
+            y = this.getRand(44, 52);
         } else if(area == 4){
-            x = this.getRand(39, 58);
-            y = this.getRand(7, 26);
+            x = this.getRand(44, 52);
+            y = this.getRand(44, 52);
         }
-
+        //System.out.printf("X: %d; Y: %d;\n", x, y);
         for(int i = 0; i <= 64; i++){
-            this.streetFrames.add(new Vector2f(x, i));
-            this.streetFrames.add(new Vector2f(i, y));
+            map[i][x] = 's';
+            map[y][i] = 's';
             for(int j = 1; j < 4; j++){
-                this.streetFrames.add(new Vector2f(x + j, i));
-                this.streetFrames.add(new Vector2f(x - j, i));
-                this.streetFrames.add(new Vector2f(i, y + j));
-                this.streetFrames.add(new Vector2f(i, y - j));
+                map[i][x + j] = 's';
+                map[i][x - j] = 's';
+                map[y + j][i] = 's';
+                map[y - j][i] = 's';
             }
-            int flag1 = 0, flag2 = 0;
-            for(Vector2f it: streetFrames){
-                if(it.x == (x+4) && it.y == (i)){
-                    flag1 = 1;
-                }
-                if(it.x == (i) && it.y == (y+4)){
-                    flag2 = 1;
-                }
+            if(map[i][x + 4] != 's'){
+                map[i][x + 4] = 'w';
             }
-            if(flag1 == 0){
-                this.sideWalk.add(new Vector2f(x + 4, i));
-                this.sideWalk.add(new Vector2f(x - 4, i));
+            if(map[i][x - 4] != 's'){
+                map[i][x - 4] = 'w';
             }
-            if(flag2 == 0){
-                this.sideWalk.add(new Vector2f(i, y + 4));
-                this.sideWalk.add(new Vector2f(i, y - 4));
+            if(map[y + 4][i] != 's'){
+                map[y + 4][i] = 'w';
             }
-        }
-        for(Vector2f it: streetFrames){
-            Iterator<Vector2f> it2 = sideWalk.iterator();
-            while(it2.hasNext()){
-                Vector2f vector2f = it2.next();
-                if(it.x == vector2f.x && it.y == vector2f.y){
-                    it2.remove();
-                }
+            if(map[y - 4][i] != 's'){
+                map[y - 4][i] = 'w';
             }
         }
     }
 
-    public void printStreet(){
+    public void printStreet(char[][] map){
         for(int y = 64; y >= 0; y--){
             for(int x = 0; x <= 64; x++){
                 int flag = 0;
-                for(Vector2f it: streetFrames){
-                    if(it.x == x && it.y == y){
-                        System.out.printf("|");
-                        flag = 1;
-                        break;
-                    }
-                }
-                for(Vector2f it: sideWalk){
-                    if(it.x == x && it.y == y){
-                        System.out.printf("=");
-                        flag = 1;
-                        break;
-                    }
-                }
-                if(flag == 0){
-                    System.out.printf(" ");
-                }
+                System.out.printf("%c", map[x][y]);
+
             }
             System.out.printf("\n");
         }
