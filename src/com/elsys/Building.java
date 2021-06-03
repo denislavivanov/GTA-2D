@@ -1,6 +1,6 @@
 package com.elsys;
 
-public abstract class Building {
+public abstract class Building implements Inaccessible{
     String name;
 
 

@@ -1,6 +1,6 @@
 package com.elsys;
 
-public abstract class Weapon{
+public abstract class Weapon implements Accessible{
     String name;
     int capacity;
 

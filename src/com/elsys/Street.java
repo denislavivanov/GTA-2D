@@ -2,7 +2,7 @@ package com.elsys;
 
 import java.util.Random;
 
-public class Street {
+public class Street implements Accessible{
 
     public Street(char[][] map) {
         int area = this.getRand(1, 3);
