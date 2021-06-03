@@ -1,6 +1,11 @@
 package com.elsys;
 
-public class Car implements Inaccessible{
+public class Car implements GameObject, Accessible{
+    @Override
+    public char[][] init(char[][] map) {
+        return map;
+    }
+
     public enum COLOR{
         blue,
         red,

@@ -1,12 +1,10 @@
 package com.elsys;
 
-public class TowerBlock extends Building implements Accessible{
-
-    public TowerBlock(String name, char[][] map){
+public class House extends Building implements Accessible{
+    public House(String name, char[][] map) {
         super(name);
         init(map);
     }
-
 
     @Override
     public char[][] init(char[][] map) {

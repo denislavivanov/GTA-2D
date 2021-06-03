@@ -1,6 +1,6 @@
 package com.elsys;
 
-public abstract class Weapon implements Accessible{
+public abstract class Weapon implements CollisionFree{
     String name;
     int capacity;
 
