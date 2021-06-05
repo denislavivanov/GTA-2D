@@ -1,9 +1,11 @@
 package com.elsys;
 
+import java.util.TreeMap;
+
 public class Park implements GameObject, CollisionFree{
 
     @Override
-    public char[][] init(char[][] map) {
-        return map;
+    public void init(TreeMap<Coordinates, Character> map) {
+
     }
 }

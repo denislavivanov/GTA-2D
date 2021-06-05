@@ -1,19 +1,26 @@
 package com.elsys;
 
-import java.util.Arrays;
 import java.util.Random;
+import java.util.TreeMap;
 
 
-public class Map{
-    char[][] map;
+public class Map {
+    //char[][] map;
+    TreeMap<Coordinates, Character> map;
 
     public Map() {
-        map = new char[65][65];
-        for (char[] e : map) {
-            Arrays.fill(e, ' ');
+        map = new TreeMap<Coordinates, Character>();
+
+        for (int i = 0; i < 64; i++) {
+            for(int j = 0; j < 64; j++) {
+                map.put(new Coordinates(i, j), ' ');
+            }
         }
         Street streets = new Street(map);
-        TowerBlock towerBlock = new TowerBlock("House", map);
+
+        SmallHouses smallHouses = new SmallHouses("Small House", map);
+
+        //TowerBlock towerBlock = new TowerBlock("House", map);
         this.printMap();
     }
 
@@ -23,9 +30,9 @@ public class Map{
     }
 
     public void printMap(){
-        for(int y = 0; y <= 64; y++){
-            for(int x = 0; x <= 64; x++){
-                System.out.printf("%c", map[y][x]);
+        for(int y = 0; y < 64; y++){
+            for(int x = 0; x < 64; x++){
+                System.out.printf("%c", map.get(new Coordinates(y, x)));
 
             }
             System.out.printf("\n");

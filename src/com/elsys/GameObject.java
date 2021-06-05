@@ -1,5 +1,7 @@
 package com.elsys;
 
+import java.util.TreeMap;
+
 public interface GameObject {
-    char[][] init(char[][] map);
+    void init(TreeMap<Coordinates, Character> map);
 }

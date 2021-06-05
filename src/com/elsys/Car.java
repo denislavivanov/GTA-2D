@@ -1,9 +1,11 @@
 package com.elsys;
 
+import java.util.TreeMap;
+
 public class Car implements GameObject, Accessible{
     @Override
-    public char[][] init(char[][] map) {
-        return map;
+    public void init(TreeMap<Coordinates, Character> map) {
+
     }
 
     public enum COLOR{

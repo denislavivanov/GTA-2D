@@ -3,11 +3,11 @@ package com.elsys;
 import java.util.Random;
 import java.util.Vector;
 
-public class Player implements GameObject {
+/*public class Player implements GameObject {
     String username;
 
     @Override
-    public char[][] init(char[][] map) {
+    public void init(char[][] map) {
         this.current_position = getRandPosition(64);
         if(map[current_position.x][current_position.y] == ' ') {
             map[current_position.x][current_position.y] = '*';
@@ -96,4 +96,4 @@ public class Player implements GameObject {
 
         return map;
     }
-}
+}*/
