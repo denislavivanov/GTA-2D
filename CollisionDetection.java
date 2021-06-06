@@ -15,9 +15,9 @@ public class CollisionDetection {
 
     public boolean check_map(GameObject obj) {
 
-        boolean collisionX = obj.Position.x + obj.Size.x > 32.0f || obj.Position.x < -32.0f;
+        boolean collisionX = obj.Position.x + obj.Size.x > 64.0f || obj.Position.x < 0.0f;
 
-        boolean collisionY = obj.Position.y + obj.Size.y > 32.0f || obj.Position.y < -32.0f;
+        boolean collisionY = obj.Position.y + obj.Size.y > 64.0f || obj.Position.y < 0.0f;
 
         return collisionX || collisionY;
     }
