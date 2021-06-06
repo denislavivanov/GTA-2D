@@ -5,6 +5,7 @@ import java.util.TreeMap;
 
 
 public class Map {
+    TreeMap<Coordinates, Character> originalMap;
     TreeMap<Coordinates, Character> map;
 
     public Map() {
@@ -29,7 +30,11 @@ public class Map {
         TowerBlock towerBlock2 = new TowerBlock("Tower", map, 2);
         ClothingStore clothingStore = new ClothingStore("ClothingStore", map);
 
-        this.printMap();
+        originalMap = map;
+
+        Player player1 = new Player("Player1", Player.Person.Man1, map, originalMap);
+
+        this.printMap(map);
     }
 
     public int getRand(int randomRange) {
@@ -37,7 +42,7 @@ public class Map {
         return rand.nextInt(randomRange);
     }
 
-    public void printMap(){
+    public void printMap(TreeMap<Coordinates, Character> map){
         for(int y = 0; y < 64; y++){
             for(int x = 0; x < 64; x++){
                 System.out.printf("%c", map.get(new Coordinates(y, x)));
