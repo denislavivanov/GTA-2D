@@ -1,5 +1,6 @@
 package com.elsys;
 
+import javax.swing.*;
 import java.util.Random;
 import java.util.TreeMap;
 
@@ -30,8 +31,15 @@ public class Map {
         TowerBlock towerBlock2 = new TowerBlock("Tower", map, 2);
         ClothingStore clothingStore = new ClothingStore("ClothingStore", map);
 
+        //Weapon weapons = new Weapon("Op", map);
+        Knife knife = new Knife(map);
+        Pistol pistol = new Pistol(map);
+        AK47 ak47 = new AK47(map);
+        RocketLauncher rocketLauncher = new RocketLauncher(map);
+
         originalMap = map;
-        //this.printOnlyMap(map);
+        this.printOnlyMap(map);
+        System.out.printf("\n");
 
         Player player1 = new Player("Player1", Player.Person.Man1, map, originalMap);
 
