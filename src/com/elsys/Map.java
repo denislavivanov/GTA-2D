@@ -23,6 +23,7 @@ public class Map {
 
         SmallHouses smallHouses2 = new SmallHouses("Small Houses2", map, 2);
         Skyscraper skyscraper = new Skyscraper("Skyscraper", map);
+        Mall mall = new Mall("Mall", map);
 
         SmallHouses smallHouses3 = new SmallHouses("Small Houses3", map, 3);
         TowerBlock towerBlock2 = new TowerBlock("Tower", map, 2);

@@ -23,7 +23,7 @@ public class Supermarket extends Building{
 
         for(int column = sizeY - 2, count = 0; count < 7; count++, column--){
             for(int row = sizeX + 1, count2 = 0; count2 < 7; count2++, row++){
-                map.put(new Coordinates(column, row), 'm');
+                map.put(new Coordinates(column, row), 'f');
             }
         }
         for(int row = sizeX; row < 64; row++){
