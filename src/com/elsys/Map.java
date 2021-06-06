@@ -22,7 +22,6 @@ public class Map {
         Supermarket supermarket = new Supermarket("Billa", map);
 
         SmallHouses smallHouses2 = new SmallHouses("Small Houses2", map, 2);
-
         Skyscraper skyscraper = new Skyscraper("Skyscraper", map);
 
         SmallHouses smallHouses3 = new SmallHouses("Small Houses3", map, 3);

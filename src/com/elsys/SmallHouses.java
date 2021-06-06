@@ -19,7 +19,7 @@ public class SmallHouses extends Building {
             for(sizeY = 0; map.get(new Coordinates(sizeY, 0)) != 'w'; sizeY++);
             sizeY += 9;
             for(; map.get(new Coordinates(sizeY, sizeX - 1)) != 'w'; distance++, sizeY++);
-            System.out.printf("Distance: %d\n", distance);
+            //System.out.printf("Distance: %d\n", distance);
 
         } else if(house == 3){
             for(sizeX = 0; map.get(new Coordinates(0, sizeX)) != 'w'; sizeX++);
@@ -28,7 +28,7 @@ public class SmallHouses extends Building {
             for(; map.get(new Coordinates(sizeY, 0)) != 'w';sizeY++);
             sizeY += 9;
 
-            System.out.printf("SizeY: %d\n", sizeY);
+            //System.out.printf("SizeY: %d\n", sizeY);
             distance = 64 - sizeY;
             sizeY = 64;
             //System.out.printf("Distance: %d; SizeY: %d\n", distance, sizeY);
@@ -39,14 +39,10 @@ public class SmallHouses extends Building {
     }
 
     public void makeHouse(TreeMap<Coordinates, Character> map, int sizeX, int sizeY, int house, int distance){
-        System.out.printf("SizeX: %d; SizeY: %d; Distance: %d.\n", sizeX, sizeY, distance);
+        //System.out.printf("SizeX: %d; SizeY: %d; Distance: %d.\n", sizeX, sizeY, distance);
         //System.out.println((sizeY - 1) / 8);
 
-        System.out.println(distance);
-
         int column = sizeY - distance, row;
-
-        System.out.println(column);
 
         for(int i = 0; i < sizeX; i++){
             map.put(new Coordinates(column, i), 'p');
