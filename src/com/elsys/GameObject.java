@@ -1,7 +1,11 @@
-package com.elsys;
+import org.joml.Vector2f;
 
-import java.util.TreeMap;
+public abstract class GameObject {
+    Vector2f Position;
+    Vector2f Size;
 
-public interface GameObject {
-    void init(TreeMap<Coordinates, Character> map);
+    public GameObject(Vector2f pos, Vector2f size) {
+        this.Position = pos;
+        this.Size = size;
+    }
 }
