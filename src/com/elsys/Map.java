@@ -79,7 +79,7 @@ public class Map {
         }
     }
 
-    public TreeMap<Coordinates, Character> returnMap(TreeMap<Coordinates, Character> map, Player player){
+    public TreeMap<Coordinates, Character> returnMap(Player player){
         int column = player.current_position.y - 5;
         int row = player.current_position.x - 5;
         int printableX = 11, printableY = 11;
