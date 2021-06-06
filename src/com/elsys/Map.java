@@ -1,5 +1,7 @@
 package com.elsys;
 
+import org.lwjgl.system.CallbackI;
+
 import java.util.Random;
 import java.util.TreeMap;
 
@@ -18,13 +20,16 @@ public class Map {
         }
         Street streets = new Street(map);
 
-        SmallHouses smallHouses = new SmallHouses("Small Houses", map, 1);
-        TowerBlock towerBlock = new TowerBlock("Tower", map);
+        SmallHouses smallHouses1 = new SmallHouses("Small Houses", map, 1);
+        TowerBlock towerBlock1 = new TowerBlock("Tower", map, 1);
         Supermarket supermarket = new Supermarket("Billa", map);
 
         SmallHouses smallHouses2 = new SmallHouses("Small Houses2", map, 2);
 
+        Skyscraper skyscraper = new Skyscraper("Skyscraper", map);
+
         SmallHouses smallHouses3 = new SmallHouses("Small Houses3", map, 3);
+        TowerBlock towerBlock2 = new TowerBlock("Tower", map, 2);
 
         this.printMap();
     }
