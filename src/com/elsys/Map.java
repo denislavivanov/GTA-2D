@@ -39,6 +39,8 @@ public class Map {
         AK47 ak47 = new AK47(map);
         RocketLauncher rocketLauncher = new RocketLauncher(map);
 
+        //this.printOnlyMap(map);
+
         originalMap = map;
         //this.printOnlyMap(map);
         //System.out.printf("\n");
@@ -75,6 +77,30 @@ public class Map {
             }
             System.out.printf("\n");
         }
+    }
+
+    public TreeMap<Coordinates, Character> returnMap(TreeMap<Coordinates, Character> map, Player player){
+        int column = player.current_position.y - 5;
+        int row = player.current_position.x - 5;
+        int printableX = 11, printableY = 11;
+
+        TreeMap<Coordinates, Character> my_map = new TreeMap<Coordinates, Character>();
+
+        for(int count = 0; count < printableY; count++, column++){
+
+            for(int count2 = 0, my_row = row; count2 < printableX; count2++, my_row++){
+                if(map.get(new Coordinates(column, my_row)) == null){
+                    my_map.put(new Coordinates(count, count2), '#');
+                    //System.out.printf("#");
+                } else{
+                    my_map.put(new Coordinates(count, count2), map.get(new Coordinates(column, my_row)));
+                    //System.out.printf("%c", map.get(new Coordinates(column, my_row)));
+                }
+            }
+            //System.out.printf("\n");
+        }
+
+        return my_map;
     }
 
 }
