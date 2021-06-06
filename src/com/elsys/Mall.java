@@ -23,8 +23,6 @@ public class Mall extends Building{
         int distanceY = 0;
         for(int column = sizeY; map.get(new Coordinates(column, sizeX)) != 'w'; column++, distanceY++);
 
-        System.out.printf("DistanceY: %d\n", distanceY);
-
         int column = sizeY + (distanceY - 7) / 2;
 
         //map.put(new Coordinates(sizeY, sizeX), '|');

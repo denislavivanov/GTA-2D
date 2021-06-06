@@ -27,6 +27,8 @@ public class Map {
         Skyscraper skyscraper = new Skyscraper("Skyscraper", map);
         Mall mall = new Mall("Mall", map);
 
+
+
         SmallHouses smallHouses3 = new SmallHouses("Small Houses3", map, 3);
         TowerBlock towerBlock2 = new TowerBlock("Tower", map, 2);
         ClothingStore clothingStore = new ClothingStore("ClothingStore", map);
@@ -40,8 +42,6 @@ public class Map {
         originalMap = map;
         //this.printOnlyMap(map);
         //System.out.printf("\n");
-
-        //this.printMap(map, player1);
 
     }
 

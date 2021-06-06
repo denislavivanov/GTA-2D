@@ -1,30 +1,14 @@
 package com.elsys;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.*;
 
-public class Main implements KeyListener {
+public class Main extends Canvas {
 
     public static void main(String[] args) {
         Map map = new Map();
         Player player1 = new Player("Player1", Player.Person.Man1, map.map, map.originalMap);
 
-
-        //player1.move_up(map.map, map.originalMap);
+        map.printMap(map.map, player1);
     }
 
-    @Override
-    public void keyTyped(KeyEvent е) {
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent е) {
-
-    }
-
-    @Override
-    public void keyReleased(KeyEvent е) {
-
-    }
 }
