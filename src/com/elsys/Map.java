@@ -18,9 +18,13 @@ public class Map {
         }
         Street streets = new Street(map);
 
-        SmallHouses smallHouses = new SmallHouses("Small Houses", map);
+        SmallHouses smallHouses = new SmallHouses("Small Houses", map, 1);
         TowerBlock towerBlock = new TowerBlock("Tower", map);
         Supermarket supermarket = new Supermarket("Billa", map);
+
+        SmallHouses smallHouses2 = new SmallHouses("Small Houses2", map, 2);
+
+        SmallHouses smallHouses3 = new SmallHouses("Small Houses3", map, 3);
 
         this.printMap();
     }
