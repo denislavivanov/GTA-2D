@@ -1,6 +1,6 @@
 package com.elsys;
 
-public abstract class Building implements GameObject{
+public abstract class Building{
     String name;
 
 

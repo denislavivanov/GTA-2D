@@ -1,13 +1,10 @@
 package com.elsys;
 
-import org.lwjgl.system.CallbackI;
-
 import java.util.Random;
 import java.util.TreeMap;
 
 
 public class Map {
-    //char[][] map;
     TreeMap<Coordinates, Character> map;
 
     public Map() {

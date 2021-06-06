@@ -3,8 +3,8 @@ package com.elsys;
 import java.util.Random;
 import java.util.Vector;
 
-/*public class Player implements GameObject {
-    String username;
+public class Player {
+    /*String username;
 
     @Override
     public void init(char[][] map) {
@@ -95,5 +95,5 @@ import java.util.Vector;
         }
 
         return map;
-    }
-}*/
+    }*/
+}

@@ -2,11 +2,7 @@ package com.elsys;
 
 import java.util.TreeMap;
 
-public class Car implements GameObject, Accessible{
-    @Override
-    public void init(TreeMap<Coordinates, Character> map) {
-
-    }
+public class Car implements Accessible{
 
     public enum COLOR{
         blue,

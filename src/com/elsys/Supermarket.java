@@ -6,11 +6,10 @@ public class Supermarket extends Building{
 
     public Supermarket(String name, TreeMap<Coordinates, Character> map){
         super(name);
-        init(map);
+        makeSupermarket(map);
     }
 
-    @Override
-    public void init(TreeMap<Coordinates, Character> map) {
+    public void makeSupermarket(TreeMap<Coordinates, Character> map) {
         int sizeX, sizeY;
         for(sizeX = 0; map.get(new Coordinates(0, sizeX)) != 'w'; sizeX++);
 

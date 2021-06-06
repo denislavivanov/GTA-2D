@@ -81,8 +81,4 @@ public class SmallHouses extends Building {
         }
     }
 
-    @Override
-    public void init(TreeMap<Coordinates, Character> map) {
-
-    }
 }

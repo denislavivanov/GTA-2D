@@ -5,11 +5,10 @@ import java.util.TreeMap;
 public class House extends Building implements Accessible{
     public House(String name, TreeMap<Coordinates, Character> map) {
         super(name);
-        init(map);
+        makeHouse(map);
     }
 
-    @Override
-    public void init(TreeMap<Coordinates, Character> map) {
+    public void makeHouse(TreeMap<Coordinates, Character> map) {
         /*int cordX, cordY, sizeX, sizeY;
         for(cordX = 0; map[64][cordX] != 'w'; cordX++);
         cordX += 9;
