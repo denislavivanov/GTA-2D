@@ -41,8 +41,7 @@ public class Map {
         //this.printOnlyMap(map);
         //System.out.printf("\n");
 
-        Player player1 = new Player("Player1", Player.Person.Man1, map, originalMap);
-        this.printMap(map, player1);
+        //this.printMap(map, player1);
 
     }
 
