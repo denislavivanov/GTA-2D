@@ -31,10 +31,11 @@ public class Map {
         ClothingStore clothingStore = new ClothingStore("ClothingStore", map);
 
         originalMap = map;
+        //this.printOnlyMap(map);
 
         Player player1 = new Player("Player1", Player.Person.Man1, map, originalMap);
 
-        this.printMap(map);
+        this.printMap(map, player1);
     }
 
     public int getRand(int randomRange) {
@@ -42,11 +43,28 @@ public class Map {
         return rand.nextInt(randomRange);
     }
 
-    public void printMap(TreeMap<Coordinates, Character> map){
-        for(int y = 0; y < 64; y++){
-            for(int x = 0; x < 64; x++){
-                System.out.printf("%c", map.get(new Coordinates(y, x)));
+    public void printOnlyMap(TreeMap<Coordinates, Character> map){
+        for(int column = 0; column < 64; column++){
+            for(int row = 0; row < 64; row++){
+                System.out.printf("%c", map.get(new Coordinates(column, row)));
+            }
+            System.out.printf("\n");
+        }
+    }
 
+    public void printMap(TreeMap<Coordinates, Character> map, Player player){
+        int column = player.current_position.y - 5;
+        int row = player.current_position.x - 5;
+        int printableX = 11, printableY = 11;
+
+        for(int count = 0; count < printableY; count++, column++){
+
+            for(int count2 = 0, my_row = row; count2 < printableX; count2++, my_row++){
+                if(map.get(new Coordinates(column, my_row)) == null){
+                    System.out.printf("#");
+                } else{
+                    System.out.printf("%c", map.get(new Coordinates(column, my_row)));
+                }
             }
             System.out.printf("\n");
         }
