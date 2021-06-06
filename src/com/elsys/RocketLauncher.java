@@ -8,4 +8,7 @@ public class RocketLauncher extends Weapon{
         super("RocketLauncher", 16);
         this.spawnWeapon(map, '4');
     }
+    public RocketLauncher(){
+        super("RocketLauncher", 16);
+    }
 }

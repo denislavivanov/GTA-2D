@@ -55,7 +55,25 @@ public class Player {
     public void move_up(TreeMap<Coordinates, Character> map, TreeMap<Coordinates, Character> originalMap) {
         if(map.get(new Coordinates(current_position.y - 1, current_position.x)) == 'w'
                 || map.get(new Coordinates(current_position.y - 1, current_position.x)) == 'p'
-                || map.get(new Coordinates(current_position.y - 1, current_position.x)) == 's') {       // trqbva purvo da napravim vsichki obekti s collision
+                || map.get(new Coordinates(current_position.y - 1, current_position.x)) == 's'
+                || map.get(new Coordinates(current_position.y - 1, current_position.x)) == '1'
+                || map.get(new Coordinates(current_position.y - 1, current_position.x)) == '2'
+                || map.get(new Coordinates(current_position.y - 1, current_position.x)) == '3'
+                || map.get(new Coordinates(current_position.y - 1, current_position.x)) == '4') {       // trqbva purvo da napravim vsichki obekti s collision
+
+            if(map.get(new Coordinates(current_position.y - 1, current_position.x)) == '1'){
+                weapons.add(new Knife());
+                originalMap.put(new Coordinates(current_position.y - 1, current_position.x), 'p');
+            } else if(map.get(new Coordinates(current_position.y - 1, current_position.x)) == '2'){
+                weapons.add(new Pistol());
+                originalMap.put(new Coordinates(current_position.y - 1, current_position.x), 'p');
+            } else if(map.get(new Coordinates(current_position.y - 1, current_position.x)) == '3'){
+                weapons.add(new AK47());
+                originalMap.put(new Coordinates(current_position.y - 1, current_position.x), 'p');
+            } else if(map.get(new Coordinates(current_position.y - 1, current_position.x)) == '4'){
+                weapons.add(new RocketLauncher());
+                originalMap.put(new Coordinates(current_position.y - 1, current_position.x), 'p');
+            }
 
             map.put(new Coordinates(current_position.y - 1, current_position.x), '*');
             map.put(new Coordinates(current_position.y, current_position.x), originalMap.get(new Coordinates(current_position.y, current_position.x)));
@@ -67,7 +85,25 @@ public class Player {
     public void move_down(TreeMap<Coordinates, Character> map, TreeMap<Coordinates, Character> originalMap) {
         if(map.get(new Coordinates(current_position.y + 1, current_position.x)) == 'w'
                 || map.get(new Coordinates(current_position.y + 1, current_position.x)) == 'p'
-                || map.get(new Coordinates(current_position.y + 1, current_position.x)) == 's') {       // trqbva purvo da napravim vsichki obekti s collision
+                || map.get(new Coordinates(current_position.y + 1, current_position.x)) == 's'
+                || map.get(new Coordinates(current_position.y + 1, current_position.x)) == '1'
+                || map.get(new Coordinates(current_position.y + 1, current_position.x)) == '2'
+                || map.get(new Coordinates(current_position.y + 1, current_position.x)) == '3'
+                || map.get(new Coordinates(current_position.y + 1, current_position.x)) == '4') {       // trqbva purvo da napravim vsichki obekti s collision
+
+            if(map.get(new Coordinates(current_position.y + 1, current_position.x)) == '1'){
+                weapons.add(new Knife());
+                originalMap.put(new Coordinates(current_position.y + 1, current_position.x), 'p');
+            } else if(map.get(new Coordinates(current_position.y + 1, current_position.x)) == '2'){
+                weapons.add(new Pistol());
+                originalMap.put(new Coordinates(current_position.y + 1, current_position.x), 'p');
+            } else if(map.get(new Coordinates(current_position.y + 1, current_position.x)) == '3'){
+                weapons.add(new AK47());
+                originalMap.put(new Coordinates(current_position.y + 1, current_position.x), 'p');
+            } else if(map.get(new Coordinates(current_position.y + 1, current_position.x)) == '4'){
+                weapons.add(new RocketLauncher());
+                originalMap.put(new Coordinates(current_position.y + 1, current_position.x), 'p');
+            }
 
             map.put(new Coordinates(current_position.y + 1, current_position.x), '*');
             map.put(new Coordinates(current_position.y, current_position.x), originalMap.get(new Coordinates(current_position.y, current_position.x)));
@@ -78,7 +114,25 @@ public class Player {
     public void move_left(TreeMap<Coordinates, Character> map, TreeMap<Coordinates, Character> originalMap) {
         if(map.get(new Coordinates(current_position.y, current_position.x - 1)) == 'w'
                 || map.get(new Coordinates(current_position.y, current_position.x - 1)) == 'p'
-                || map.get(new Coordinates(current_position.y, current_position.x - 1)) == 's') {       // trqbva purvo da napravim vsichki obekti s collision
+                || map.get(new Coordinates(current_position.y, current_position.x - 1)) == 's'
+                || map.get(new Coordinates(current_position.y, current_position.x - 1)) == '1'
+                || map.get(new Coordinates(current_position.y, current_position.x - 1)) == '2'
+                || map.get(new Coordinates(current_position.y, current_position.x - 1)) == '3'
+                || map.get(new Coordinates(current_position.y, current_position.x - 1)) == '4') {       // trqbva purvo da napravim vsichki obekti s collision
+
+            if(map.get(new Coordinates(current_position.y, current_position.x - 1)) == '1'){
+                weapons.add(new Knife());
+                originalMap.put(new Coordinates(current_position.y, current_position.x - 1), 'p');
+            } else if(map.get(new Coordinates(current_position.y, current_position.x - 1)) == '2'){
+                weapons.add(new Pistol());
+                originalMap.put(new Coordinates(current_position.y, current_position.x - 1), 'p');
+            } else if(map.get(new Coordinates(current_position.y, current_position.x - 1)) == '3'){
+                weapons.add(new AK47());
+                originalMap.put(new Coordinates(current_position.y, current_position.x - 1), 'p');
+            } else if(map.get(new Coordinates(current_position.y, current_position.x - 1)) == '4'){
+                weapons.add(new RocketLauncher());
+                originalMap.put(new Coordinates(current_position.y, current_position.x - 1), 'p');
+            }
 
             map.put(new Coordinates(current_position.y, current_position.x - 1), '*');
             map.put(new Coordinates(current_position.y, current_position.x), originalMap.get(new Coordinates(current_position.y, current_position.x)));
@@ -88,7 +142,25 @@ public class Player {
     public void move_right(TreeMap<Coordinates, Character> map, TreeMap<Coordinates, Character> originalMap) {
         if(map.get(new Coordinates(current_position.y, current_position.x + 1)) == 'w'
                 || map.get(new Coordinates(current_position.y, current_position.x + 1)) == 'p'
-                || map.get(new Coordinates(current_position.y, current_position.x + 1)) == 's') {       // trqbva purvo da napravim vsichki obekti s collision
+                || map.get(new Coordinates(current_position.y, current_position.x + 1)) == 's'
+                || map.get(new Coordinates(current_position.y, current_position.x + 1)) == '1'
+                || map.get(new Coordinates(current_position.y, current_position.x + 1)) == '2'
+                || map.get(new Coordinates(current_position.y, current_position.x + 1)) == '3'
+                || map.get(new Coordinates(current_position.y, current_position.x + 1)) == '4') {       // trqbva purvo da napravim vsichki obekti s collision
+
+            if(map.get(new Coordinates(current_position.y, current_position.x + 1)) == '1'){
+                weapons.add(new Knife());
+                originalMap.put(new Coordinates(current_position.y, current_position.x + 1), 'p');
+            } else if(map.get(new Coordinates(current_position.y, current_position.x + 1)) == '2'){
+                weapons.add(new Pistol());
+                originalMap.put(new Coordinates(current_position.y, current_position.x + 1), 'p');
+            } else if(map.get(new Coordinates(current_position.y, current_position.x + 1)) == '3'){
+                weapons.add(new AK47());
+                originalMap.put(new Coordinates(current_position.y, current_position.x + 1), 'p');
+            } else if(map.get(new Coordinates(current_position.y, current_position.x + 1)) == '4'){
+                weapons.add(new RocketLauncher());
+                originalMap.put(new Coordinates(current_position.y, current_position.x + 1), 'p');
+            }
 
             map.put(new Coordinates(current_position.y, current_position.x + 1), '*');
             map.put(new Coordinates(current_position.y, current_position.x), originalMap.get(new Coordinates(current_position.y, current_position.x)));

@@ -8,4 +8,7 @@ public class Pistol extends Weapon{
         super("Pistol", 64);
         this.spawnWeapon(map, '2');
     }
+    public Pistol(){
+        super("Pistol", 64);
+    }
 }
