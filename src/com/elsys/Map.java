@@ -11,6 +11,7 @@ public class Map {
 
     public Map() {
         map = new TreeMap<Coordinates, Character>();
+        originalMap = new TreeMap<Coordinates, Character>();
 
         for (int i = 0; i < 64; i++) {
             for(int j = 0; j < 64; j++) {
@@ -41,7 +42,16 @@ public class Map {
 
         //this.printOnlyMap(map);
 
-        originalMap = map;
+        for(int column = 0; column <= 63; column++){
+            for(int row = 0; row <= 63; row++){
+                this.originalMap.put(new Coordinates(column, row), this.map.get(new Coordinates(column, row)));
+                //System.out.printf("%c", this.map.get(new Coordinates(column, row)));
+            }
+            System.out.printf("\n");
+        }
+
+
+        //originalMap = map;
         //this.printOnlyMap(map);
         //System.out.printf("\n");
 
@@ -93,8 +103,11 @@ public class Map {
                     my_map.put(new Coordinates(count, count2), '#');
                     //System.out.printf("#");
                 } else{
-                    my_map.put(new Coordinates(count, count2), map.get(new Coordinates(column, my_row)));
-                    //System.out.printf("%c", map.get(new Coordinates(column, my_row)));
+                    if(map.get(new Coordinates(column, my_row)) == '*'){
+                        my_map.put(new Coordinates(count, count2), originalMap.get(new Coordinates(column, my_row)));
+                    } else {
+                        my_map.put(new Coordinates(count, count2), map.get(new Coordinates(column, my_row)));
+                    }
                 }
             }
             //System.out.printf("\n");
