@@ -9,7 +9,7 @@ public class Player extends GameObject {
 
         this.speed = speed;
 
-        this.sprite = new Sprite("Graphics/Textures/shroom.png", super.data);
+        this.sprite = new Sprite("Graphics/Textures/player.png", super.data);
     }
 
     public float getSpeed() {
