@@ -5,11 +5,11 @@ import java.util.Random;
 import java.util.TreeMap;
 
 
-public class Map {
+public class MapGenerator {
     TreeMap<Coordinates, Character> originalMap;
     TreeMap<Coordinates, Character> map;
 
-    public Map() {
+    public MapGenerator() {
         map = new TreeMap<Coordinates, Character>();
         originalMap = new TreeMap<Coordinates, Character>();
 
