@@ -18,7 +18,7 @@ public class MapGenerator {
                 map.put(new Coordinates(i, j), ' ');
             }
         }
-        Street streets = new Street(map);
+        StreetGenerator streets = new StreetGenerator(map);
 
         SmallHouses smallHouses1 = new SmallHouses("Small Houses", map, 1);
         TowerBlock towerBlock1 = new TowerBlock("Tower", map, 1);
@@ -35,19 +35,20 @@ public class MapGenerator {
         ClothingStore clothingStore = new ClothingStore("ClothingStore", map);
 
         //Weapon weapons = new Weapon("Op", map);
+        /*
         Knife knife = new Knife(map);
         Pistol pistol = new Pistol(map);
         AK47 ak47 = new AK47(map);
         RocketLauncher rocketLauncher = new RocketLauncher(map);
 
         //this.printOnlyMap(map);
-
+        */
         for(int column = 0; column <= 63; column++){
             for(int row = 0; row <= 63; row++){
                 this.originalMap.put(new Coordinates(column, row), this.map.get(new Coordinates(column, row)));
                 //System.out.printf("%c", this.map.get(new Coordinates(column, row)));
             }
-            System.out.printf("\n");
+            //System.out.printf("\n");
         }
 
 
@@ -88,7 +89,7 @@ public class MapGenerator {
             System.out.printf("\n");
         }
     }
-
+    /*
     public TreeMap<Coordinates, Character> returnMap(Player player){
         int column = player.current_position.y - 5;
         int row = player.current_position.x - 5;
@@ -115,5 +116,32 @@ public class MapGenerator {
 
         return my_map;
     }
+    */
+    public TreeMap<Coordinates, Character> returnMap(Player player) {
+        int X = (int)player.Position.x - 5;
+        int Y = (int)player.Position.y - 5;
+        int printableX = 11, printableY = 11;
 
+        TreeMap<Coordinates, Character> temp = new TreeMap<Coordinates, Character>();
+
+        if(X < 0)
+            X = 0;
+
+        if(Y < 0)
+            Y = 0;
+        
+        if(X + printableX > 64)
+            X = 64 - printableX;
+        
+        if(Y + printableY > 64)
+            Y = 64 - printableY;
+
+        for(int row = Y; row < Y + printableY; row++) {
+            for(int column = X; column < X + printableX; column++) {
+                temp.put(new Coordinates(column - X, row - Y), map.get(new Coordinates(row, column)));
+            }
+        }
+
+        return temp;
+    }
 }
