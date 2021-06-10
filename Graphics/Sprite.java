@@ -8,7 +8,7 @@ public class Sprite {
     private float[] data;
     private short[] indices;
     private final int VERTEX_COUNT = 6;
-    Texture texture;
+    private Texture texture;
 
     public Sprite(String tex_path, float[] data) {
         this.texture = new Texture(tex_path);
