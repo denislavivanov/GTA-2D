@@ -7,7 +7,7 @@ import org.joml.Matrix4f;
 public class Game {
     private Graphics renderer;
     private Player player;
-    private Map2 map;
+    private Map map;
     private boolean gameover = false;
     private Matrix4f projection;
     private CollisionDetection collision_detector;
@@ -15,7 +15,7 @@ public class Game {
     private void init() {
         renderer = new Graphics(800, 600, "GTA II(kind of)", false);
         player = new Player(new Vector2f(1.0f, 1.0f), new Vector2f(32.0f, 32.0f), 3.0f);
-        map = new Map2(11, 11);
+        map = new Map(11, 11);
         collision_detector = new CollisionDetection();
         projection = new Matrix4f().ortho(0.0f, 11.0f, 11.0f, 0.0f, -1.0f, 1.0f, false);
     }
