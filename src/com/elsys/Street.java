@@ -5,11 +5,11 @@ import org.joml.Vector2f;
 import java.util.Random;
 import java.util.TreeMap;
 
-public class Street implements CollisionFree{
+public class StreetGenerator implements CollisionFree {
 
 
 
-    public Street(TreeMap<Coordinates, Character> map) {
+    public StreetGenerator(TreeMap<Coordinates, Character> map) {
 
         int area = this.getRand(1, 3);
         if(area == 1){
