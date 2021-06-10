@@ -39,6 +39,8 @@ public class Graphics {
 
         glfwMakeContextCurrent(this.window);
 
+	glfwSwapInterval(1);
+	    
         GL.createCapabilities();
     }
 
