@@ -12,6 +12,7 @@ public class Map {
     private Tower tower_block;
     private Skyscraper skyscraper_block;
     private Exit exit_block;
+    private Mall mall_block;
     private TreeMap<Coordinates, Character> crop;
 
     public Map(int width, int height) {
@@ -26,6 +27,7 @@ public class Map {
         this.tower_block = new Tower(new Vector2f(0.0f, 0.0f), new Vector2f(1.0f, 1.0f));
         this.skyscraper_block = new Skyscraper(new Vector2f(0.0f, 0.0f), new Vector2f(1.0f, 1.0f));
         this.exit_block = new Exit(new Vector2f(13.0f, 5.0f), new Vector2f(1.0f, 1.0f));
+        this.mall_block = new Mall(new Vector2f(0.0f, 0.0f), new Vector2f(1.0f, 1.0f));
     }
 
     public void draw(Player p) {
@@ -52,6 +54,9 @@ public class Map {
 
                 if(c == '^')
                     skyscraper_block.draw(new Vector2f(y, x));
+
+                if(c == 'm')
+                    mall_block.draw(new Vector2f(y, x));
 
                 if(c == 'e')
                     exit_block.draw(new Vector2f(y, x));

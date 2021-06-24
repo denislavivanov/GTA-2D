@@ -1,7 +1,7 @@
 import java.util.TreeMap;
 
-public class Mall extends Building{
-    public Mall(String name, TreeMap<Coordinates, Character> map){
+public class MallGenerator extends Building{
+    public MallGenerator(String name, TreeMap<Coordinates, Character> map){
         super(name);
         makeMall(map);
     }

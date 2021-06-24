@@ -1,5 +1,6 @@
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL33C.*;
+import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.opengl.GL;
 import org.joml.Vector2f;
 import org.joml.Matrix4f;
@@ -10,14 +11,18 @@ public class Game {
     private Map map;
     private boolean gameover = false;
     private Matrix4f projection;
+    private KeyboardInput keyboard_input;
     private CollisionDetection collision_detector;
 
     private void init() {
         renderer = new Graphics(1200, 800, "GTA II(kind of)", false);
-        player = new Player(new Vector2f(1.0f, 1.0f), new Vector2f(32.0f, 32.0f), 3.0f);
+        player = new Player(new Vector2f(1.0f, 1.0f), new Vector2f(32.0f, 32.0f), 10.0f);
         map = new Map(11, 11);
         collision_detector = new CollisionDetection();
         projection = new Matrix4f().ortho(0.0f, 11.0f, 11.0f, 0.0f, -1.0f, 1.0f, false);
+        keyboard_input = new KeyboardInput(player, collision_detector);
+
+        renderer.setKeyCallback(keyboard_input);
     }
 
     public void run() {
@@ -34,8 +39,7 @@ public class Game {
 
     private void update() {
         glfwPollEvents();
-        getInput();
-
+    
         if(collision_detector.check(player, map.getExitBlock())) {
             gameover = true;
             System.out.println("Game over!");
@@ -50,37 +54,5 @@ public class Game {
         player.draw(new Vector2f(5.0f, 5.0f));
 
         glfwSwapBuffers(renderer.window);
-    }
-
-    private void getInput() {
-        if(glfwGetKey(renderer.window, GLFW_KEY_W) == GLFW_PRESS) {
-            player.move(new Vector2f(0.0f, -player.getSpeed() * 0.1f));
-
-            if(collision_detector.check_map(player)) {
-                player.move(new Vector2f(0.0f, player.getSpeed() * 0.1f));
-            }
-
-        }
-        if(glfwGetKey(renderer.window, GLFW_KEY_A) == GLFW_PRESS) {
-            player.move(new Vector2f(-player.getSpeed() * 0.1f, 0.0f));
-
-            if(collision_detector.check_map(player)) {
-                player.move(new Vector2f(player.getSpeed() * 0.1f, 0.0f));
-            }
-        }
-        if(glfwGetKey(renderer.window, GLFW_KEY_S) == GLFW_PRESS) {
-            player.move(new Vector2f(0.0f, player.getSpeed() * 0.1f));
-
-            if(collision_detector.check_map(player)) {
-                player.move(new Vector2f(0.0f, -player.getSpeed() * 0.1f));
-            }
-        }
-        if(glfwGetKey(renderer.window, GLFW_KEY_D) == GLFW_PRESS) {
-            player.move(new Vector2f(player.getSpeed() * 0.1f, 0.0f));
-
-            if(collision_detector.check_map(player)) {
-                player.move(new Vector2f(-player.getSpeed() * 0.1f, 0.0f));
-            }
-        }
     }
 }

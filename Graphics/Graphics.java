@@ -92,4 +92,8 @@ public class Graphics {
         mat.get(data);
         glUniformMatrix4fv(glGetUniformLocation(this.program, name), false, data);
     }
+
+    public void setKeyCallback(KeyboardInput keyInput) {
+        glfwSetKeyCallback(window, keyInput);
+    }
 }

@@ -24,7 +24,7 @@ public class MapGenerator {
 
         SmallHouses smallHouses2 = new SmallHouses("Small Houses2", map, 2);
         SkyscraperGenerator skyscraper = new SkyscraperGenerator("Skyscraper", map);
-        Mall mall = new Mall("Mall", map);
+        MallGenerator mall = new MallGenerator("Mall", map);
 
 
 
