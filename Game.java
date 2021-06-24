@@ -54,10 +54,10 @@ public class Game {
 
     private void getInput() {
         if(glfwGetKey(renderer.window, GLFW_KEY_W) == GLFW_PRESS) {
-            player.move(new Vector2f(0.0f, -player.getSpeed() * 0.05f));
+            player.move(new Vector2f(0.0f, -player.getSpeed() * 0.1f));
 
             if(collision_detector.check_map(player)) {
-                player.move(new Vector2f(0.0f, player.getSpeed() * 0.05f));
+                player.move(new Vector2f(0.0f, player.getSpeed() * 0.1f));
             }
 
         }
