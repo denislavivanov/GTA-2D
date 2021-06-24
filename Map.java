@@ -13,6 +13,8 @@ public class Map {
     private Skyscraper skyscraper_block;
     private Exit exit_block;
     private Mall mall_block;
+    private ClothingStore clothingstore_block;
+    private FoodStore foodstore_block;
     private TreeMap<Coordinates, Character> crop;
 
     public Map(int width, int height) {
@@ -28,6 +30,8 @@ public class Map {
         this.skyscraper_block = new Skyscraper(new Vector2f(0.0f, 0.0f), new Vector2f(1.0f, 1.0f));
         this.exit_block = new Exit(new Vector2f(13.0f, 5.0f), new Vector2f(1.0f, 1.0f));
         this.mall_block = new Mall(new Vector2f(0.0f, 0.0f), new Vector2f(1.0f, 1.0f));
+        this.clothingstore_block = new ClothingStore(new Vector2f(0.0f, 0.0f), new Vector2f(1.0f, 1.0f));
+        this.foodstore_block = new FoodStore(new Vector2f(0.0f, 0.0f), new Vector2f(1.0f, 1.0f));
     }
 
     public void draw(Player p) {
@@ -60,6 +64,12 @@ public class Map {
 
                 if(c == 'e')
                     exit_block.draw(new Vector2f(y, x));
+
+                if(c == 'c')
+                    clothingstore_block.draw(new Vector2f(y, x));
+
+                if(c == 'f')
+                    foodstore_block.draw(new Vector2f(y, x));
             }
         }
     }

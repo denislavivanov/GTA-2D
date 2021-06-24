@@ -30,7 +30,7 @@ public class MapGenerator {
 
         SmallHouses smallHouses3 = new SmallHouses("Small Houses3", map, 3);
         TowerBlock towerBlock2 = new TowerBlock("Tower", map, 2);
-        ClothingStore clothingStore = new ClothingStore("ClothingStore", map);
+        ClothingStoreGenerator clothingStore = new ClothingStoreGenerator("ClothingStore", map);
 
         map.put(new Coordinates(5, 13), 'e'); //Exit block
 

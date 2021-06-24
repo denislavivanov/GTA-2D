@@ -2,8 +2,8 @@ import com.sun.source.tree.Tree;
 
 import java.util.TreeMap;
 
-public class ClothingStore extends Building{
-    public ClothingStore(String name, TreeMap<Coordinates, Character> map){
+public class ClothingStoreGenerator extends Building{
+    public ClothingStoreGenerator(String name, TreeMap<Coordinates, Character> map){
         super(name);
         makeClothingStore(map);
     }
