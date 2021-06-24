@@ -35,6 +35,10 @@ public class Game {
     private void update() {
         glfwPollEvents();
         getInput();
+
+        if(collision_detector.check(player, map.getExitBlock())) {
+            gameover = true;
+        }
     }
 
     private void render() {
@@ -49,11 +53,12 @@ public class Game {
 
     private void getInput() {
         if(glfwGetKey(renderer.window, GLFW_KEY_W) == GLFW_PRESS) {
-            player.move(new Vector2f(0.0f, -player.getSpeed() * 0.1f));
+            player.move(new Vector2f(0.0f, -player.getSpeed() * 0.05f));
 
             if(collision_detector.check_map(player)) {
-                player.move(new Vector2f(0.0f, player.getSpeed() * 0.1f));
+                player.move(new Vector2f(0.0f, player.getSpeed() * 0.05f));
             }
+
         }
         if(glfwGetKey(renderer.window, GLFW_KEY_A) == GLFW_PRESS) {
             player.move(new Vector2f(-player.getSpeed() * 0.1f, 0.0f));

@@ -3,7 +3,6 @@ import org.joml.Vector2f;
 public class CollisionDetection {
 
     public boolean check(GameObject obj1, GameObject obj2) {
-
         boolean collisionX = obj1.Position.x + obj1.Size.x >= obj2.Position.x &&
         obj2.Position.x + obj2.Size.x >= obj1.Position.x;
 

@@ -32,6 +32,8 @@ public class MapGenerator {
         TowerBlock towerBlock2 = new TowerBlock("Tower", map, 2);
         ClothingStore clothingStore = new ClothingStore("ClothingStore", map);
 
+        map.put(new Coordinates(5, 13), 'e'); //Exit block
+
         //Weapon weapons = new Weapon("Op", map);
         /*
         Knife knife = new Knife(map);

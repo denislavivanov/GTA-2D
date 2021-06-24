@@ -11,6 +11,7 @@ public class Map {
     private Sidewalk concrete_block;
     private Tower tower_block;
     private Skyscraper skyscraper_block;
+    private Exit exit_block;
     private TreeMap<Coordinates, Character> crop;
 
     public Map(int width, int height) {
@@ -24,6 +25,7 @@ public class Map {
         this.concrete_block = new Sidewalk(new Vector2f(0.0f, 0.0f), new Vector2f(1.0f, 1.0f));
         this.tower_block = new Tower(new Vector2f(0.0f, 0.0f), new Vector2f(1.0f, 1.0f));
         this.skyscraper_block = new Skyscraper(new Vector2f(0.0f, 0.0f), new Vector2f(1.0f, 1.0f));
+        this.exit_block = new Exit(new Vector2f(13.0f, 5.0f), new Vector2f(1.0f, 1.0f));
     }
 
     public void draw(Player p) {
@@ -50,7 +52,14 @@ public class Map {
 
                 if(c == '^')
                     skyscraper_block.draw(new Vector2f(y, x));
+
+                if(c == 'e')
+                    exit_block.draw(new Vector2f(y, x));
             }
         }
+    }
+
+    public Exit getExitBlock() {
+        return exit_block;
     }
 }  
