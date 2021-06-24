@@ -13,7 +13,7 @@ public class Game {
     private CollisionDetection collision_detector;
 
     private void init() {
-        renderer = new Graphics(800, 600, "GTA II(kind of)", false);
+        renderer = new Graphics(1200, 800, "GTA II(kind of)", false);
         player = new Player(new Vector2f(1.0f, 1.0f), new Vector2f(32.0f, 32.0f), 3.0f);
         map = new Map(11, 11);
         collision_detector = new CollisionDetection();
@@ -24,7 +24,7 @@ public class Game {
         init();
 
         while(!gameover) {
-            render();
+            render();            
             update();
 
             if(glfwWindowShouldClose(renderer.window))
