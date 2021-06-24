@@ -1,8 +1,8 @@
 compile:
-	javac -cp .:MapGeneration:Graphics:Graphics/LWJGL-linux/* Main.java
+	javac -cp .:src/com/elsys:Graphics:Graphics/LWJGL-linux/* Main.java
 
 run:
-	java -cp .:MapGeneration:Graphics:Graphics/LWJGL-linux/* Main
+	java -cp .:src/com/elsys:Graphics:Graphics/LWJGL-linux/* Main
 
 clean:
-	rm *.class MapGeneration/*.class Graphics/*.class
+	rm *.class src/com/elsys/*.class Graphics/*.class
