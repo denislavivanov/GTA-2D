@@ -38,6 +38,7 @@ public class Game {
 
         if(collision_detector.check(player, map.getExitBlock())) {
             gameover = true;
+            System.out.println("Game over!");
         }
     }
 
