@@ -1,0 +1,1 @@
+del *.class Graphics\*.class src\com\elsys\*.class

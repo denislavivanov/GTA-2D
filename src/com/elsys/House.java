@@ -1,5 +1,3 @@
-package com.elsys;
-
 import java.util.TreeMap;
 
 public class House extends Building implements Accessible{

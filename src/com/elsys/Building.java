@@ -1,5 +1,3 @@
-package com.elsys;
-
 public abstract class Building{
     String name;
 

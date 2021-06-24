@@ -1,5 +1,3 @@
-package com.elsys;
-
 import jdk.nashorn.api.tree.Tree;
 
 import java.awt.*;

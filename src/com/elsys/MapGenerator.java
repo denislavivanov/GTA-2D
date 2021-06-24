@@ -1,5 +1,3 @@
-package com.elsys;
-
 import javax.swing.*;
 import java.util.Random;
 import java.util.TreeMap;
@@ -25,7 +23,7 @@ public class MapGenerator {
         Supermarket supermarket = new Supermarket("Billa", map);
 
         SmallHouses smallHouses2 = new SmallHouses("Small Houses2", map, 2);
-        Skyscraper skyscraper = new Skyscraper("Skyscraper", map);
+        SkyscraperGenerator skyscraper = new SkyscraperGenerator("Skyscraper", map);
         Mall mall = new Mall("Mall", map);
 
 
@@ -73,8 +71,8 @@ public class MapGenerator {
     }
 
     public void printMap(TreeMap<Coordinates, Character> map, Player player){
-        int column = player.current_position.y - 5;
-        int row = player.current_position.x - 5;
+        int column = (int)player.Position.y - 5;
+        int row = (int)player.Position.x - 5;
         int printableX = 11, printableY = 11;
 
         for(int count = 0; count < printableY; count++, column++){

@@ -1,5 +1,3 @@
-package com.elsys;
-
 public class Coordinates implements Comparable<Coordinates> {
     int column;
     int row;

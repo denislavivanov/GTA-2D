@@ -1,5 +1,3 @@
-package com.elsys;
-
 import java.util.Random;
 import java.util.TreeMap;
 

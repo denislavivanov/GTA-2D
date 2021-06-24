@@ -1,1 +1,1 @@
-javac -cp .;src\com\elsys;Graphics\LWJGL-windows\* Main.java
+javac -cp .;src\com\elsys;Graphics;Graphics\LWJGL-windows\* Main.java

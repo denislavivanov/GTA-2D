@@ -1,10 +1,8 @@
-package com.elsys;
-
 import java.util.TreeMap;
 
-public class Skyscraper extends Building{
+public class SkyscraperGenerator extends Building{
 
-    public Skyscraper(String name, TreeMap<Coordinates, Character> map){
+    public SkyscraperGenerator(String name, TreeMap<Coordinates, Character> map){
         super(name);
         makeSkyscraper(map);
     }

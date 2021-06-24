@@ -1,12 +1,10 @@
-package com.elsys;
-
 import com.sun.source.tree.Tree;
 
 import java.util.Random;
 import java.util.TreeMap;
 import java.util.Vector;
 
-public class Player {
+public class PlayerGenerator {
     String username;
 
     public enum Person {
@@ -33,7 +31,7 @@ public class Player {
 
 
 
-    public Player(String username, Person type, TreeMap<Coordinates, Character> map, TreeMap<Coordinates, Character> originalMap) {
+    public PlayerGenerator(String username, Person type, TreeMap<Coordinates, Character> map, TreeMap<Coordinates, Character> originalMap) {
         this.username = username;
         this.type = type;
         create(map);
