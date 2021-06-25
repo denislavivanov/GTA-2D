@@ -15,31 +15,31 @@ public class KeyboardInput extends GLFWKeyCallback {
     public void invoke(long window, int key, int scancode, int action, int mods) {
         if(action == GLFW_PRESS) {
             if(key == GLFW_KEY_W) {
-                player.move(new Vector2f(0.0f, -player.getSpeed() * 0.1f));
+                player.move(new Vector2f(0.0f, -player.getSpeed()));
 
                 if(collision_detector.check_map(player)) {
-                    player.move(new Vector2f(0.0f, player.getSpeed() * 0.1f));
+                    player.move(new Vector2f(0.0f, player.getSpeed()));
                 }
             }
             if(key == GLFW_KEY_A) {
-                player.move(new Vector2f(-player.getSpeed() * 0.1f, 0.0f));
+                player.move(new Vector2f(-player.getSpeed(), 0.0f));
 
                 if(collision_detector.check_map(player)) {
-                    player.move(new Vector2f(player.getSpeed() * 0.1f, 0.0f));
+                    player.move(new Vector2f(player.getSpeed(), 0.0f));
                 }
             }
             if(key == GLFW_KEY_S) {
-                player.move(new Vector2f(0.0f, player.getSpeed() * 0.1f));
+                player.move(new Vector2f(0.0f, player.getSpeed()));
 
                 if(collision_detector.check_map(player)) {
-                    player.move(new Vector2f(0.0f, -player.getSpeed() * 0.1f));
+                    player.move(new Vector2f(0.0f, -player.getSpeed()));
                 }
             }
             if(key == GLFW_KEY_D) {
-                player.move(new Vector2f(player.getSpeed() * 0.1f, 0.0f));
+                player.move(new Vector2f(player.getSpeed(), 0.0f));
 
                 if(collision_detector.check_map(player)) {
-                    player.move(new Vector2f(-player.getSpeed() * 0.1f, 0.0f));
+                    player.move(new Vector2f(-player.getSpeed(), 0.0f));
                 }
             }
         }

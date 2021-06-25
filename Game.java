@@ -16,7 +16,7 @@ public class Game {
 
     private void init() {
         renderer = new Graphics(1200, 800, "GTA II(kind of)", false);
-        player = new Player(new Vector2f(1.0f, 1.0f), new Vector2f(32.0f, 32.0f), 10.0f);
+        player = new Player(new Vector2f(1.0f, 1.0f), new Vector2f(32.0f, 32.0f), 1.0f);
         map = new Map(11, 11);
         collision_detector = new CollisionDetection();
         projection = new Matrix4f().ortho(0.0f, 11.0f, 11.0f, 0.0f, -1.0f, 1.0f, false);
@@ -39,7 +39,7 @@ public class Game {
 
     private void update() {
         glfwPollEvents();
-    
+
         if(collision_detector.check(player, map.getExitBlock())) {
             gameover = true;
             System.out.println("Game over!");
